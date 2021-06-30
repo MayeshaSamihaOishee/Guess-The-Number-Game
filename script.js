@@ -10,6 +10,16 @@ window.onload = function() {
 function playGame(){
   // *CODE GOES BELOW HERE *
   let numberGuess = document.getElementById('number-guess').value;
+   displayResult(numberGuess);
+}
+
+/**
+ * Show the result for if the guess it too high, too low, or correct
+ * HINT: Use if, else if, else statement 
+ */
+// *CODE GOES BELOW HERE *
+
+function displayResult(numberGuess){
   if (numberGuess>correctNumber){
     console.log("the number you guessed is higher than the correct number");
   }
@@ -20,14 +30,6 @@ function playGame(){
     console.log("you have guessed the correct number");
   }
 }
-
-/**
- * Show the result for if the guess it too high, too low, or correct
- * HINT: Use if, else if, else statement 
- */
-// *CODE GOES BELOW HERE *
-
-
 
 /**
  * Initialize a new game by resetting all values and content on the page
