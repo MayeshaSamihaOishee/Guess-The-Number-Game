@@ -5,6 +5,7 @@ window.onload = function() {
     document.getElementById("number-submit").addEventListener("click", playGame);
     document.getElementById("restart-game").addEventListener("click", initGame)
     getRandomNumber();
+    showYouWon();
 }
 
 function playGame(){
@@ -104,14 +105,15 @@ function getDialog(dialogType, text){
 }
 
 function showYouWon(){
-  const text = "Awesome job, you got it!"
+  const text = "You guessed the correct number"
   /**
    * Retrieve the dialog using the getDialog() function
    * and save it to variable called dialog
    * HINT: Use the 'won' and text parameters 
    */
   // *CODE GOES BELOW HERE *
-
+  let dialog = getDialog ('won',text);
+  console.log(dialog);
   document.getElementById("result").innerHTML = dialog;
 }
 
@@ -123,6 +125,7 @@ function showNumberAbove(){
    * HINT: Use the 'warning' and text parameters 
    */
   // *CODE GOES BELOW HERE *
+  let dialog = getDialog('warning', text);
 
   document.getElementById("result").innerHTML = dialog;
 }
