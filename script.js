@@ -1,5 +1,7 @@
 let correctNumber = getRandomNumber();
-console.log(correctNumber);
+//console.log(correctNumber);
+
+let guesses = [];
 
 window.onload = function() {
     document.getElementById("number-submit").addEventListener("click", playGame);
@@ -10,6 +12,8 @@ window.onload = function() {
 function playGame(){
   let numberGuess = document.getElementById('number-guess').value;
    displayResult(numberGuess);
+   saveGuessHistory(numberGuess);
+   displayHistory();
 }
 
 function displayResult(numberGuess){
@@ -41,16 +45,19 @@ function getRandomNumber(){
 }
 
 function saveGuessHistory(guess) {
-  // *CODE GOES BELOW HERE *
+  guesses.push(guess);
   
 }
 
 function displayHistory() {
-  let index; // TODO
+  let index=guesses.length-1; 
   let list = "<ul class='list-group'>";
-  // *CODE GOES BELOW HERE *
+  while(index>0){
+list+= "<li class='list-group-item'>" + "You have guessed " + guesses[index] + "</li>";
+index=index-1;
+  } 
   list += '</ul>'
-  document.getElementById("history").innerHTML = list;
+   document.getElementById("history").innerHTML = list;
 }
 
 function getDialog(dialogType, text){
