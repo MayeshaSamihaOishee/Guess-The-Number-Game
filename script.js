@@ -30,7 +30,10 @@ function displayResult(numberGuess){
 }
 
 function initGame(){
-  // *CODE GOES BELOW HERE *
+  correctNumber=getRandomNumber();
+  resetResultContent();
+  guesses = [];
+  displayHistory();
 }
 
 function resetResultContent(){
